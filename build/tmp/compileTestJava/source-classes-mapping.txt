@@ -1,2 +1,0 @@
-in/momin5/discordbot/Main.java
- in.momin5.discordbot.Main
