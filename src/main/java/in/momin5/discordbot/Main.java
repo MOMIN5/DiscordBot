@@ -25,6 +25,7 @@ public class Main {
                     .setActivity(Activity.playing("idk some cool shit"))
                     .build();
 
+            jda.upsertCommand("help","help!!!");
 
         }catch (Exception e) {
             LOGGER.error(e.getMessage());
