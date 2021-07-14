@@ -11,6 +11,7 @@ public class Main {
 
     private static final String TOKEN = "ODA2MDk5MDUyNTY3NTkyOTkw.YBkgPg.YW6XSKaZ7a6dS5CicJ77zijNT_4";
     public static final Logger LOGGER = LoggerFactory.getLogger("MominBot");
+    public static final String prefix = "/";
 
 
     public static void main(String[] args) {
@@ -24,8 +25,7 @@ public class Main {
                     .setActivity(Activity.playing("idk some cool shit"))
                     .build();
 
-            jda.upsertCommand("ping","Shows bots latency").queue();
-            jda.upsertCommand("purge","Purges a gives number of messages").queue();
+
         }catch (Exception e) {
             LOGGER.error(e.getMessage());
         }

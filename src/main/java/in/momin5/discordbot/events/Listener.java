@@ -1,8 +1,11 @@
 package in.momin5.discordbot.events;
 
 import in.momin5.discordbot.Main;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class Listener extends ListenerAdapter {
@@ -13,20 +16,24 @@ public class Listener extends ListenerAdapter {
     }
 
     @Override
-    public void onSlashCommand(SlashCommandEvent event) {
+    public void onMessageReceived(MessageReceivedEvent event) {
+        if(event.getAuthor().isBot())
+            return;
 
-        String commandName = event.getName();
+        if(event.getMessage().getContentRaw().startsWith(Main.prefix)) {
 
-        if(commandName.equals("ping")){
+            var commandName = event.getMessage().getContentRaw().substring(1);
+            var channel = event.getChannel();
+            var message = event.getMessage();
 
-            long currentTime = System.currentTimeMillis();
+            if(commandName.equals("ping")){
+                long currentTime = System.currentTimeMillis();
+                message.reply("Calculating...").queue(message1 -> {
+                    message1.editMessageFormat("%d ms",System.currentTimeMillis() - currentTime).queue();
+                });
+            }else if(commandName.equals("purge")) {
 
-            event.reply("Calculating...").queue(message1 -> {
-                message1.editOriginalFormat("%d ms",System.currentTimeMillis() - currentTime).queue();
-            });
-
-        }else if(event.getName().equals("purge")) {
-            event.reply("hello").queue();
+            }
 
         }
     }
