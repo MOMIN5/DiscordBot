@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class Main {
 
-    private static final String TOKEN = "ODA2MDk5MDUyNTY3NTkyOTkw.YBkgPg.YW6XSKaZ7a6dS5CicJ77zijNT_4";
+    private static final String TOKEN = "PUT YOUR BOT TOKEN HERE";
     public static final Logger LOGGER = LoggerFactory.getLogger("MominBot");
     public static final String prefix = "/";
 
