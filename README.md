@@ -1,5 +1,5 @@
 
-# Java Discord Bot (JDA)
+# Discord Bot
 
 A Discord Bot made in java using JDA (Java Discord API), originally made for fun and to play around with Java 16, make issue for support or for any other thing   
 The bot is still a WIP, but should be pretty much usuable in the near future
