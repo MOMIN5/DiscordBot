@@ -1,6 +1,8 @@
 package in.momin5.discordbot.commands;
 
 import in.momin5.discordbot.Main;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.EmbedType;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class SayCommand {

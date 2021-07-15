@@ -1,6 +1,7 @@
 package in.momin5.discordbot.events;
 
 import in.momin5.discordbot.Main;
+import in.momin5.discordbot.commands.BanCommand;
 import in.momin5.discordbot.commands.PingCommand;
 import in.momin5.discordbot.commands.PurgeCommand;
 import in.momin5.discordbot.commands.SayCommand;
@@ -31,6 +32,9 @@ public class Listener extends ListenerAdapter {
 
             }else if(commandName.startsWith("say")) {
                 SayCommand.onMessageReceived(event);
+
+            }else if(commandName.startsWith("ban")) {
+                BanCommand.onMessageReceived(event);
             }
 
         }
